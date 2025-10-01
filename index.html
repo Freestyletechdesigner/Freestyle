@@ -1,1035 +1,952 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
-    <style type="text/css">
-        body {
-            background: url('https://github.com/Freestyletechdesigner/Freestyle/my bg.jpg');
-        }
-        
-        header {
-            display: flex;
-            gap: 400px;
-            background-color: #000;
-            padding-left: 50px;
-            border-radius: 20px;
-            position: sticky;
-            top: 1%;
-        }
-        
-        .logo {
-            color: #fff;
-            text-shadow: 0 0 10px #000;
-            animation: logo 1s ease-out infinite;
-        }
-        
-        .logo-i {
-            color: #02f;
-        }
-        
-        .logo:hover {
-            animation: logo-hover 1s ease infinite;
-        }
-        
-        @keyframes logo-hover {
-            to {
-                text-shadow: 0 0 20px #000;
-            }
-        }
-        
-        .head-nav2 {
-            display: none;
-        }
-        
-        .head-nav2>details>div>a {
-            flex-direction: column;
-        }
-        
-        .head-nav2>details>summary>img {
-            width: 30px;
-        }
-        
-        .head-nav2>details>div>a>img {
-            width: 10px;
-        }
-        
-        .head-nav {
-            margin-top: 10px;
-            flex-direction: row;
-            display: flex;
-            border-radius: 10px;
-        }
-        
-        nav>a {
-            text-align: center;
-            font-size: 22px;
-            color: #fff;
-            text-decoration: none;
-            padding: 20px 5px;
-            width: 80px;
-            border-radius: 10px;
-        }
-        
-        nav>a:hover {
-            text-decoration: underline #02f;
-        }
-        
-        .contact {
-            color: #fff;
-            background-color: #025;
-            margin-left: 100px;
-            margin-top: 10px;
-            text-align: center;
-            width: 100px;
-            height: 50px;
-            border-radius: 15px;
-        }
-        
-        .contact:hover {
-            color: #fff;
-            background-color: #000;
-            box-shadow: 6px 6px 2px #005;
-        }
-        
-        .top {
-            display: flex;
-            margin-top: 10px;
-            gap: 400px;
-            padding-left: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px #02f;
-            height: 600px;
-        }
-        
-        .top-left {
-            color: #fff;
-            font-size: 2rem;
-            text-shadow: 0 0 10px #00f;
-            padding-top: 80px;
-        }
-        
-        .top-left>h1 {
-            color: transparent;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            margin-left: 5px;
-        }
-        
-        .top-left .info {
-            flex-direction: row;
-        }
-        
-        .top-left .call-box {
-            width: 200px;
-            height: 60px;
-            border-radius: 15px;
-            color: #fff;
-            background-color: #02f;
-            font-size: 16px;
-        }
-        
-        .about {
-            display: flex;
-            margin-top: 10px;
-            gap: 400px;
-            padding-left: 40px;
-            background-color: #000;
-            border-radius: 20px;
-            box-shadow: 0 0 50px #000;
-            height: 600px;
-        }
-        
-        .about-left {
-            color: #fff;
-            text-shadow: 0 0 10px #00f;
-            padding-top: 80px;
-        }
-        
-        .about-left>h1 {
-            color: transparent;
-            font-size: 30px;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            margin-left: 5px;
-        }
-        
-        .about-left>p {
-            font-size: 25px;
-            text-shadow: none;
-        }
-        
-        .about-left .info {
-            flex-direction: row;
-        }
-        
-        .about-left .call-box {
-            width: 200px;
-            height: 60px;
-            border-radius: 15px;
-            color: #fff;
-            background-color: #02f;
-            text-align: left;
-            font-size: 16px;
-        }
-        
-        .social-container {
-            padding-left: 70px;
-        }
-        
-        .top-left .info .social-container .social {
-            width: 29px;
-            margin-left: 40px;
-            filter: drop-shadow(0 0 10px #02f);
-        }
-        
-        .my-image {
-            width: 450px;
-            filter: drop-shadow(0 0 20px #02f);
-        }
-        
-        .service-title {
-            color: transparent;
-            font-size: 3rem;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            text-decoration: underline #fff;
-            text-align: center;
-            padding-top: 50px;
-        }
-        
-        .service {
-            display: flex;
-            gap: 100px;
-            padding-left: 70px;
-            padding-top: 60px;
-        }
-        
-        .service-container {
-            width: 400px;
-            height: 500px;
-            font-size: 2rem;
-            border-radius: 20px;
-            border: 1px solid #fff;
-            background-color: transparent;
-            animation: skill 3s linear infinite;
-        }
-        
-        @keyframes skill {
-            from {
-                box-shadow: inset 0 0 20px #fff;
-            }
-            to {
-                box-shadow: inset 0 0 30px #02f;
-            }
-        }
-        
-        .service-container:hover {
-            animation: pop-skill 3s linear 1;
-        }
-        
-        @keyframes pop-skill {
-            from {
-                transform: scale3d(2.0);
-            }
-        }
-        
-        .service-H {
-            color: transparent;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            text-decoration: underline #fff;
-            text-align: center;
-        }
-        
-        .service-B {
-            color: #fff;
-            font-size: 20px;
-            padding-left: 50px;
-        }
-        
-        .service-container>button {
-            color: #fff;
-            background-color: #025;
-            margin-left: 50px;
-            width: 200px;
-            height: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #02f;
-        }
-        
-        .service-container>button:hover {
-            background-color: #fff;
-            color: #025;
-        }
-        
-        .skill-title {
-            color: transparent;
-            font-size: 3rem;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            text-decoration: underline #fff;
-            text-align: center;
-            padding-top: 50px;
-        }
-        
-        .skills {
-            display: flex;
-            gap: 100px;
+	<style type="text/css">
+		body{
+			background: url('https://github.com/Freestyletechdesigner/my bg.jpg');
+		}
+		header{
+			display: flex;
+			gap: 400px;
+			background-color: #000;
+			padding-left: 50px;
+			border-radius: 20px;
+			position: sticky;
+			top: 1%;
+		}
+		.logo{
+			color: #fff;
+			text-shadow: 0 0 10px #000;
+			animation: logo 1s ease-out infinite;
+		}
+		.logo-i{
+			color: #02f;
+		}
+		.logo:hover{
+			animation: logo-hover 1s ease infinite;
+		}
+		@keyframes logo-hover{
+			to{
+				text-shadow: 0 0 20px #000;
+			}
+		}
+		.head-nav2{
+			display: none;
+		}
+		.head-nav2>details>div>a{
+			flex-direction: column;
+		}
+		.head-nav2>details>summary>img{
+			width: 30px;
+		}
+		.head-nav2>details>div>a>img{
+			width: 10px;
+		}
+		.head-nav{
+			margin-top: 10px;
+			flex-direction: row;
+			display: flex;
+			border-radius: 10px;
+		}
+		nav>a{
+			text-align: center;
+			font-size: 22px;
+			color: #fff;
+			text-decoration: none;
+			padding: 20px 5px; 
+			width: 80px;
+			border-radius: 10px;
+		}
+		nav>a:hover{
+			text-decoration: underline #02f;
+		}
+		.contact{
+			color: #fff;
+			background-color: #025;
+			margin-left: 100px;
+			margin-top: 10px;
+			text-align: center;
+			width: 100px;
+			height: 50px;
+			border-radius: 15px;
+		}
+		.contact:hover{
+			color: #fff;
+			background-color: #000;
+			box-shadow: 6px 6px 2px #005;
+		}
+		.top{
+			display: flex;
+			margin-top: 10px;
+			gap: 400px;
+			padding-left: 40px;
+			border-radius: 20px;
+			box-shadow: 0 0 10px #02f;
+			height: 600px;
+		}
+		.top-left{
+			color: #fff;
+			font-size: 2rem;
+			text-shadow: 0 0 10px #00f;
+			padding-top: 80px;
+		}
+		.top-left>h1{
+			color: transparent;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			margin-left: 5px;
+		}
+		.top-left .info{
+			flex-direction: row;
+		}
+		.top-left .call-box{
+			width: 200px;
+			height: 60px;
+			border-radius: 15px;
+			color: #fff;
+			background-color: #02f;
+			font-size:16px;
+		}
+		.about{
+			display: flex;
+			margin-top: 10px;
+			gap: 400px;
+			padding-left: 40px;
+			background-color: #000;
+			border-radius: 20px;
+			box-shadow: 0 0 50px #000;
+			height: 600px;
+		}
+		.about-left{
+			color: #fff;
+			text-shadow: 0 0 10px #00f;
+			padding-top: 80px;
+		}
+		.about-left>h1{
+			color: transparent;
+			font-size: 30px;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			margin-left: 5px;
+		}
+		.about-left>p{
+			font-size: 25px;
+			text-shadow: none;
+		}
+		.about-left .info{
+			flex-direction: row;
+		}
+		.about-left .call-box{
+			width: 200px;
+			height: 60px;
+			border-radius: 15px;
+			color: #fff;
+			background-color: #02f;
+			text-align: left;
+			font-size:16px;
+		}
+		.social-container{
+			padding-left: 70px;
+		}
+		.top-left .info .social-container .social{
+			width: 29px;
+			margin-left: 40px;
+			filter: drop-shadow(0 0 10px #02f);
+		}
+		.my-image{
+			width: 450px;
+			filter: drop-shadow(0 0 20px #02f);
+		}
+		.service-title{
+			color: transparent;
+			font-size: 3rem;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			text-decoration: underline #fff;
+			text-align: center;
+			padding-top: 50px;
+		}
+		.service{
+			display: flex;
+			gap: 100px;
+			padding-left: 70px;
+			padding-top: 60px;
+		}
+		.service-container{
+			width: 400px;
+			height: 500px;
+			font-size: 2rem;
+			border-radius: 20px;
+			border: 1px solid #fff;
+			background-color: transparent;
+			animation: skill 3s linear infinite;
+		}
+		@keyframes skill{
+			from{
+				box-shadow: inset 0 0 20px #fff;
+			}
+			to{
+				box-shadow: inset 0 0 30px #02f;
+			}
+		}
+		.service-container:hover{
+			animation: pop-skill 3s linear 1;
+		}
+		@keyframes pop-skill{
+			from{
+				transform: scale3d(2.0);
+			}
+		} 
+		.service-H{
+			color: transparent;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			text-decoration: underline #fff;
+			text-align: center;
+		}
+		.service-B{
+			color: #fff;
+			font-size: 20px;
+			padding-left: 50px;
+		}
+		.service-container>button{
+			color: #fff;
+			background-color: #025;
+			margin-left: 50px;
+			width: 200px;
+			height: 50px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px #02f;
+		}
+		.service-container>button:hover{
+			background-color: #fff;
+			color: #025;
+		}
+		.skill-title{
+			color: transparent;
+			font-size: 3rem;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			text-decoration: underline #fff;
+			text-align: center;
+			padding-top: 50px;
+		}
+		.skills{
+			display: flex;
+			gap: 100px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            padding-left: 70px;
-            padding-top: 60px;
-        }
-        
-        .skill-container {
-            width: 200px;
-            height: 300px;
-            border-radius: 20px;
-            border: 1px solid #fff;
-            background-color: transparent;
-            flex: 0 0 25%;
-            animation: skill 3s linear infinite;
-        }
-        
-        @keyframes skill {
-            from {
-                box-shadow: inset 0 0 20px #fff;
-            }
-            to {
-                box-shadow: inset 0 0 30px #02f;
-            }
-        }
-        
-        .skill-container:hover {
-            animation: pop-skill 3s linear 1;
-        }
-        
-        @keyframes pop-skill {
-            from {
-                transform: scale3d(2.0);
-            }
-        }
-        
-        .skill-container>img {
-            width: 80px;
-            margin-left: 150px;
-        }
-        
-        .skill-H {
-            color: transparent;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            text-decoration: underline #fff;
-            text-align: center;
-        }
-        
-        .skill-container>button {
-            color: #fff;
-            background-color: #025;
-            margin-left: 90px;
-            width: 200px;
-            height: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #02f;
-        }
-        
-        .skill-container>button:hover {
-            background-color: #fff;
-            color: #025;
-        }
-        
-        .skill-load {
-            width: 70%;
-            margin-left: 60px;
-            border-radius: 20px;
-            background: linear-gradient(180deg, #000, #025, #000);
-            display: none;
-        }
-        
-        .skill-load>p {
-            text-align: center;
-            color: #fff;
-            font-size: 20px;
-        }
-        
-        .load {
-            width: 99%;
-            height: 35px;
-            margin-left: 1%;
-            border-radius: 20px;
-            background: linear-gradient(90deg, #02f, #000);
-            background-size: 200%;
-            animation: skill-load 3s linear 1;
-        }
-        
-        @keyframes skill-load {
-            from {
-                background-size: 10%;
-            }
-            to {
-                background-size: 200%;
-            }
-        }
-        
-        .load2 {
-            width: 99%;
-            height: 35px;
-            margin-left: 1%;
-            border-radius: 20px;
-            background: linear-gradient(90deg, #02f, #000, #000);
-            background-size: 100%;
-            animation: skill-load2 3s linear 1;
-        }
-        
-        @keyframes skill-load2 {
-            from {
-                background-size: 10%;
-            }
-            to {
-                background-size: 100%;
-            }
-        }
-        
-        .project-title {
-            color: #fff;
-            font-size: 3rem;
-            text-align: center;
-            padding-top: 50px;
-        }
-        
-        .project {
-            display: flex;
-            gap: 100px;
-            padding-left: 70px;
-            padding-top: 60px;
-        }
-        
-        .project-container {
-            width: 400px;
-            height: 500px;
-            border-radius: 20px;
-            border: 1px solid #fff;
-            background-color: transparent;
-        }
-        
-        .project-container>img {
-            width: 400px;
-            height: 300px;
-            border-radius: 20px;
-        }
-        
-        .project-container>p {
-            color: #fff;
-            text-align: center;
-            font-size: 20px;
-        }
-        
-        .project-container>a>button {
-            color: #fff;
-            background-color: #025;
-            margin-left: 90px;
-            width: 200px;
-            height: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #02f;
-        }
-        
-        .project-container>a>button:hover {
-            background-color: #fff;
-            color: #024;
-        }
-        
-        .tool-title {
-            color: transparent;
-            font-size: 3rem;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            text-decoration: underline #fff;
-            text-align: center;
-            padding-top: 50px;
-        }
-        
-        .tool {
-            display: flex;
-            gap: 100px;
+			padding-left: 70px;
+			padding-top: 60px;
+		}
+		.skill-container{
+			width: 200px;
+			height: 300px;
+			border-radius: 20px;
+			border: 1px solid #fff;
+			background-color: transparent;
+			flex: 0 0 25%;
+			animation: skill 3s linear infinite;
+		}
+		@keyframes skill{
+			from{
+				box-shadow: inset 0 0 20px #fff;
+			}
+			to{
+				box-shadow: inset 0 0 30px #02f;
+			}
+		}
+		.skill-container:hover{
+			animation: pop-skill 3s linear 1;
+		}
+		@keyframes pop-skill{
+			from{
+				transform: scale3d(2.0);
+			}
+		} 
+		.skill-container>img{
+			width: 80px;
+			margin-left: 150px;
+		}
+		.skill-H{
+			color: transparent;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			text-decoration: underline #fff;
+			text-align: center;
+		}
+		.skill-container>button{
+			color: #fff;
+			background-color: #025;
+			margin-left: 90px;
+			width: 200px;
+			height: 50px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px #02f;
+		}
+		.skill-container>button:hover{
+			background-color: #fff;
+			color: #025;
+		}
+		.skill-load{
+			width: 70%;
+			margin-left: 60px;
+			border-radius: 20px;
+			background: linear-gradient(180deg, #000, #025, #000);
+			display: none;
+		}
+		.skill-load>p{
+			text-align: center;
+			color: #fff;
+			font-size: 20px;
+		}
+		.load{
+			width: 99%;
+			height: 35px;
+			margin-left: 1%;
+			border-radius: 20px;
+			background: linear-gradient(90deg, #02f, #000 );
+			background-size: 200%;
+			animation: skill-load 3s linear 1;
+		}
+		@keyframes skill-load{
+			from{
+				background-size: 10%;
+			}
+			to{
+				background-size: 200%;
+			}
+		}
+		.load2{
+			width: 99%;
+			height: 35px;
+			margin-left: 1%;
+			border-radius: 20px;
+			background: linear-gradient(90deg, #02f, #000, #000 );
+			background-size: 100%;
+			animation: skill-load2 3s linear 1;
+		}
+		@keyframes skill-load2{
+			from{
+				background-size: 10%;
+			}
+			to{
+				background-size: 100%;
+			}
+		}
+		.project-title{
+			color: #fff;
+			font-size: 3rem;
+			text-align: center;
+			padding-top: 50px;
+		}
+		.project{
+			display: flex;
+			gap: 100px;
+			padding-left: 70px;
+			padding-top: 60px;
+		}
+		.project-container{
+			width: 400px;
+			height: 500px;
+			border-radius: 20px;
+			border: 1px solid #fff;
+			background-color: transparent;
+		}
+		.project-container>img{
+			width: 400px;
+			height: 300px;
+			border-radius: 20px;
+		}
+		.project-container>p{
+			color: #fff;
+			text-align: center;
+			font-size: 20px;
+		}
+		.project-container>a>button{
+			color: #fff;
+			background-color: #025;
+			margin-left: 90px;
+			width: 200px;
+			height: 50px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px #02f;		
+		}
+		.project-container>a>button:hover{
+			background-color: #fff;
+			color: #024;
+		}
+		.tool-title{
+			color: transparent;
+			font-size: 3rem;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			text-decoration: underline #fff;
+			text-align: center;
+			padding-top: 50px;
+		}
+		.tool{
+			display: flex;
+			gap: 100px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            padding-left: 70px;
-            padding-top: 60px;
-        }
-        
-        .tool-container {
-            width: 200px;
-            height: 300px;
-            border-radius: 20px;
-            border: 1px solid #fff;
-            background-color: transparent;
-            flex: 0 0 25%;
-            animation: tool 3s linear infinite;
-        }
-        
-        @keyframes tool {
-            from {
-                box-shadow: inset 0 0 20px #fff;
-            }
-            to {
-                box-shadow: inset 0 0 30px #02f;
-            }
-        }
-        
-        .tool-container:hover {
-            animation: pop-tool 3s linear 1;
-        }
-        
-        @keyframes pop-tool {
-            from {
-                transform: scale3d(2.0);
-            }
-        }
-        
-        .tool-container>img {
-            width: 200px;
-            margin-left: 100px;
-        }
-        
-        .tool-H {
-            color: transparent;
-            background: linear-gradient(90deg, #fff, #00f, #02f);
-            background-clip: text;
-            text-shadow: none;
-            text-decoration: underline #fff;
-            text-align: center;
-        }
-        
-        .contact-page {
-            display: flex;
-            gap: 500px;
-            padding-left: 70px;
-            margin-top: 20px;
-        }
-        
-        .social-contact>h1 {
-            color: transparent;
-            background: linear-gradient(90deg, #fff, #02f);
-            background-clip: text;
-            font-size: 40px;
-        }
-        
-        .social-contact>p {
-            color: #fff;
-            font-size: 25px;
-        }
-        
-        .social-info {
-            display: flex;
-        }
-        
-        .social-info>a>img {
-            width: 30px;
-            margin-left: 20px;
-            filter: drop-shadow(0 0 10px #02f);
-        }
-        
-        .form-contact {
-            display: flex;
-            flex-direction: column;
-            color: #fff;
-        }
-        
-        .form-contact>input,
-        textarea {
-            width: 400px;
-            height: 35px;
-            margin-top: 10px;
-            background-color: transparent;
-            border: transparent;
-            border-bottom: 2px solid #02f;
-            color: #fff;
-        }
-        
-        .form-contact>button {
-            color: #fff;
-            background-color: #025;
-            margin-left: 90px;
-            width: 200px;
-            height: 50px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #02f;
-            margin-top: 15px;
-        }
-        
-        .form-contact>button:hover {
-            background-color: #fff;
-            color: #024;
-        }
-        
-        .end {
+			padding-left: 70px;
+			padding-top: 60px;
+		}
+		.tool-container{
+			width: 200px;
+			height: 300px;
+			border-radius: 20px;
+			border: 1px solid #fff;
+			background-color: transparent;
+			flex: 0 0 25%;
+			animation: tool 3s linear infinite;
+		}
+		@keyframes tool{
+			from{
+				box-shadow: inset 0 0 20px #fff;
+			}
+			to{
+				box-shadow: inset 0 0 30px #02f;
+			}
+		}
+		.tool-container:hover{
+			animation: pop-tool 3s linear 1;
+		}
+		@keyframes pop-tool{
+			from{
+				transform: scale3d(2.0);
+			}
+		} 
+		.tool-container>img{
+			width: 200px;
+			margin-left: 100px;
+		}
+		.tool-H{
+			color: transparent;
+			background: linear-gradient(90deg, #fff, #00f, #02f);
+			background-clip: text;
+			text-shadow: none;
+			text-decoration: underline #fff;
+			text-align: center;
+		}
+		.contact-page{
+			display: flex;
+			gap: 500px;
+			padding-left: 70px;
+			margin-top: 20px;
+		}
+		.social-contact>h1{
+			color: transparent;
+			background: linear-gradient(90deg, #fff, #02f);
+			background-clip: text;
+			font-size: 40px;
+		}
+		.social-contact>p{
+			color: #fff;
+			font-size: 25px;
+		}
+		.social-info{
+			display: flex;
+		}
+		.social-info>a>img{
+			width: 30px;
+			margin-left: 20px;
+			filter: drop-shadow(0 0 10px #02f);
+		}
+		.form-contact{
+			display: flex;
+			flex-direction: column;
+			color: #fff;
+		}
+		.form-contact>input,textarea{
+			width: 400px;
+			height: 35px;
+			margin-top: 10px;
+			background-color: transparent;
+			border: transparent;
+			border-bottom: 2px solid #02f;
+			color: #fff;
+		}
+		.form-contact>button{
+			color: #fff;
+			background-color: #025;
+			margin-left: 90px;
+			width: 200px;
+			height: 50px;
+			border-radius: 10px;
+			box-shadow: 0 0 20px #02f;
+			margin-top: 15px;	
+		}
+		.form-contact>button:hover{
+			background-color: #fff;
+			color: #024;
+		}
+        .end{
             justify-content: center;
         }
-        
-        .end-text {
+        .end-text{
             font-size: 20px;
             text-align: center;
             color: #fff;
         }
-        
-        .end img {
+        .end img{
             width: 30px;
             margin-left: 30px;
-        }
-        
-        footer {
-            background-color: #002;
+        } 
+        footer { 
+            background-color: #002; 
             box-shadow: inset 0 0 10px #025;
-            color: white;
-            text-align: center;
+            color: white; 
+            text-align: center; 
             padding: 15px 0;
-            margin-top: 40px;
+            margin-top: 40px; 
+        } 
+        @media (max-width:768px){
+        	body{
+        		background-size: 100%;
+        	}
+        	header{
+        		flex-direction: row;
+        		display: flex;
+        		gap: 0px;
+        		position: sticky;
+        		top: 0%;
+        		padding-left: 0;
+        	}
+        	.head-nav2{
+        		display: flex;
+        		margin-left: 200px;
+        		margin-top: 10px;
+        	}
+        	.head-nav{
+        		display: none;
+        	}
+        	.contact{
+        		display: none;
+        	}
+        	.top{
+        		flex-direction: column;
+        		display: flex;
+        		gap: 0px;
+        		height: 1200px;
+        	}
+        	.my-image{
+        		margin-left: -20px;
+        		width: 350px;
+        	}
+        	.top-left{
+        		margin-top: -100px;
+        	}
+        	.about{
+        		flex-wrap: wrap;
+        		display: flex;
+        		gap: 10px;
+        		height: 1100px;
+        	}
+        	.about-left{}
+        	.service{
+        		display: flex;
+        		gap: 10px;
+        		flex-direction: column;
+        		padding-left: 0px;
+        	}
+        	.service-container{
+        		width: 365px;
+        		margin-left: -4px;
+        	}
+        	.project{
+        		display: flex;
+        		gap: 10px;
+        		flex-direction: column;
+        		padding-left: 0px;
+        	}
+        	.project-container{
+        		width: 365px;
+        		margin-left: -4px;
+        	}
+        	.project-container>img{
+        		width: 365px;
+        	}
+        	.skills{
+        		flex-direction: column;
+        		padding-left: 0px;
+        		display: flex;
+        		gap: 16px;
+        	}
+        	.skill-container{
+        		width: 355px;
+        	}
+        	.skill-container>img{
+        		margin-left: 140px;
+        	}
+            .skill-container>button{
+            	margin-left: 80px;
+            }
+            .tool{
+            	flex-direction: column;
+            	padding-left: 0px;
+            	display: flex;
+            	gap: 20px;
+            }
+            .tool-container{
+            	width: 355px;
+            }
+        	.tool-container>img{
+        		margin-left: 250px;
+        		margin-left: 80px;
+        	}
+        	.contact-page{
+        		flex-direction: column;
+        		display: flex;
+        		gap: 20px;
+        		padding-left: 10px;
+        	}
+		    .form-contact>input,textarea{
+		    	width: 320px;
+		    	height: 35px;
+		    	margin-top: 10px;
+		    }
+    
         }
-        
-        @media (max-width:768px) {
-            body {
-                background-size: 100%;
-            }
-            header {
-                flex-direction: row;
-                display: flex;
-                gap: 0px;
-                position: sticky;
-                top: 0%;
-                padding-left: 0;
-            }
-            .head-nav2 {
-                display: flex;
-                margin-left: 200px;
-                margin-top: 10px;
-            }
-            .head-nav {
-                display: none;
-            }
-            .contact {
-                display: none;
-            }
-            .top {
-                flex-direction: column;
-                display: flex;
-                gap: 0px;
-                height: 1200px;
-            }
-            .my-image {
-                margin-left: -20px;
-                width: 350px;
-            }
-            .top-left {
-                margin-top: -100px;
-            }
-            .about {
-                flex-wrap: wrap;
-                display: flex;
-                gap: 10px;
-                height: 1100px;
-            }
-            .about-left {}
-            .service {
-                display: flex;
-                gap: 10px;
-                flex-direction: column;
-                padding-left: 0px;
-            }
-            .service-container {
-                width: 365px;
-                margin-left: -4px;
-            }
-            .project {
-                display: flex;
-                gap: 10px;
-                flex-direction: column;
-                padding-left: 0px;
-            }
-            .project-container {
-                width: 365px;
-                margin-left: -4px;
-            }
-            .project-container>img {
-                width: 365px;
-            }
-            .skills {
-                flex-direction: column;
-                padding-left: 0px;
-                display: flex;
-                gap: 16px;
-            }
-            .skill-container {
-                width: 355px;
-            }
-            .skill-container>img {
-                margin-left: 140px;
-            }
-            .skill-container>button {
-                margin-left: 80px;
-            }
-            .tool {
-                flex-direction: column;
-                padding-left: 0px;
-                display: flex;
-                gap: 20px;
-            }
-            .tool-container {
-                width: 355px;
-            }
-            .tool-container>img {
-                margin-left: 250px;
-                margin-left: 80px;
-            }
-            .contact-page {
-                flex-direction: column;
-                display: flex;
-                gap: 20px;
-                padding-left: 10px;
-            }
-            .form-contact>input,
-            textarea {
-                width: 320px;
-                height: 35px;
-                margin-top: 10px;
-            }
-        }
-    </style>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>www.Freestyle.com</title>
+
+	</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>www.Freestyle.com</title>
 </head>
-
 <body>
-    <header>
-        <a href="#top">
-            <h1 class="logo"><i class="logo-i">F</i>reestyle</h1>
-        </a>
+	<header>
+		<a href="#top"><h1 class="logo"><i class="logo-i">F</i>reestyle</h1></a>
 
-        <nav class="head-nav2">
-            <details>
-                <summary><img src="https://github.com/Freestyletechdesigner/Freestyle/menuicon.png"></summary>
-                <div class="head-list">
-                    <a href="#about"><img src="https://github.com/Freestyletechdesigner/Freestyle/profile icon.png"></a>
-                    <a href="#service"><img src="https://github.com/Freestyletechdesigner/Freestyle/service icon.png"></a>
-                    <a href="#skills"><img src="https://github.com/Freestyletechdesigner/Freestyle/skill icon.png"></a>
-                    <a href="#project"><img src="https://github.com/Freestyletechdesigner/Freestyle/project icon.png"></a>
-                    <a href="#contact"><img src="https://github.com/Freestyletechdesigner/Freestyle/contact icon.png"></a>
-                </div>
-            </details>
-        </nav>
+		<nav class="head-nav2">
+			<details>
+				<summary><img src="https://github.com/Freestyletechdesigner/menuicon.png"></summary>
+				<div class="head-list">
+				<a href="#about"><img src="https://github.com/Freestyletechdesigner/profile icon.png"></a>
+				<a href="#service"><img src="https://github.com/Freestyletechdesigner/service icon.png"></a>
+				<a href="#skills"><img src="https://github.com/Freestyletechdesigner/skill icon.png"></a>
+				<a href="#project"><img src="https://github.com/Freestyletechdesigner/project icon.png"></a>
+				<a href="#contact"><img src="https://github.com/Freestyletechdesigner/contact icon.png"></a>
+				</div>
+			</details>
+		</nav>
 
-        <nav class="head-nav">
-            <a href="#about">About</a>
-            <a href="#service">Service</a>
-            <a href="#skills">Skills</a>
-            <a href="#project">Project</a>
-        </nav>
-        <div>
-            <a href="#contact"><button class="contact">Contact</button></a>
-        </div>
-    </header>
-    <div class="top">
-        <div class="top-left">
-            <h1>Welcome to my<br> portfolio<span>!</span></h1>
-            <p>I'm excited to share my work with you.<br> Take a look around and get in touch
-                <br>if you'd like to collaborate or learn more.</p>
-            <div class="info">
-                <a href="#contact"><button class="call-box">Contact me</button></a>
-                <span class="social-container">
-				<img class="social" src="https://github.com/Freestyletechdesigner/Freestyle/facebook icon.png">
-				<img class="social" src="https://github.com/Freestyletechdesigner/Freestyle/tiktok icon.png">
-				<img class="social" src="https://github.com/Freestyletechdesigner/Freestyle/whatsapp icon.png">
+		<nav class="head-nav">
+			<a href="#about">About</a>
+			<a href="#service">Service</a>
+			<a href="#skills">Skills</a>
+			<a href="#project">Project</a>
+		</nav>
+		<div>
+		<a href="#contact"><button class="contact">Contact</button></a>
+		</div>
+	</header>
+	<div class="top">
+		<div class="top-left">
+			<h1>Welcome to my<br> portfolio<span>!</span></h1>
+			<p>I'm excited to share my work with you.<br> Take a look around and get in touch 
+				<br>if you'd like to collaborate or learn more.</p>
+				<div class="info">
+				<a href="#contact"><button class="call-box">Contact me</button></a>
+				<span class="social-container">
+				<img class="social" src="https://github.com/Freestyletechdesigner/facebook icon.png">
+				<img class="social" src="https://github.com/Freestyletechdesigner/tiktok icon.png">
+				<img class="social" src="https://github.com/Freestyletechdesigner/youtube icon.png">
 				</span>
-            </div>
-        </div>
-        <div class="top-right">
-            <img class="my-image" src="https://github.com/Freestyletechdesigner/Freestyle/freedom2.png">
-        </div>
-    </div>
+				</div>
+		</div>
+		<div class="top-right">
+			<img class="my-image" src="https://github.com/Freestyletechdesigner/freedom2.png">
+		</div>
+	</div>
 
-    <div class="about" id="about">
-        <div class="about-left">
-            <h1>Hi, I'm Freedom<br>Aka Freestyle<span>!</span></h1>
-            <p>I'm a passionate web designer, graphic designer, and photo editor. I've been fascinated with the world of digital design since 2023/2025.<br> With a keen eye for detail and a love for creativity,<br> I began exploring the realms of web design,
-                graphic design, and photo editing.<br> Over time, I've honed my skills and developed a unique <br>style that blends functionality with aesthetics.<br> I enjoy bringing ideas to life through design and helping businesses and individuals
-                establish their online presence. Let's collaborate and create something amazing together!</p>
-        </div>
-        <div class="about-right">
-            <img class="my-image" src="https://github.com/Freestyletechdesigner/Freestyle/me2.png">
-        </div>
-    </div>
+	<div class="about" id="about">
+		<div class="about-left">
+			<h1>Hi, I'm Freedom<br>Aka Freestyle<span>!</span></h1>
+			<p>I'm a passionate web designer, graphic designer, and photo editor. I've been fascinated with the world of digital design since 2023/2025.<br> With a keen eye for detail and a love for creativity,<br> I began exploring the realms of web design, graphic design, and photo editing.<br> Over time, I've honed my skills and developed a unique <br>style that blends functionality with aesthetics.<br> I enjoy bringing ideas to life through design and helping businesses and individuals establish their online presence. Let's collaborate and create something amazing together!</p>
+		</div>
+		<div class="about-right">
+			<img class="my-image" src="https://github.com/Freestyletechdesigner/me2.png">
+		</div>
+	</div>
 
-    <section id="service">
-        <div class="service-title">My Service</div>
-        <div class="service">
-            <div class="service-container">
-                <h2 class="service-H">Web <br>Designing</h2>
-                <p class="service-B">I provide professional
-                    <br>web design service and fuctional<br> user interface for the user<br> with expertise of HTML, CSS and<br> JavaScript. I'm committed to ensure<br>every project is not just looks<br> good it's also fuctioning well<br> across the device
-                    and browser.
-                </p>
-                <button>Contact me</button>
-            </div>
-            <div class="service-container">
-                <h2 class="service-H">Graphic<br>Designing</h2>
-                <p class="service-B">I provide creativity and passion<br>graphic design poster
-                    <br> service
-                    <br> with stunnig and masterpieces.<br> with a strong and memorable visual. <br>every project is not just looks<br> good it's also fuctioning well<br> across the device and browser.
-                </p>
-                <button>Contact me</button>
-            </div>
-            <div class="service-container">
-                <h2 class="service-H">Photo<br>Editing</h2>
-                <p class="service-B">Expert photo editing Services <br> Enhance your visuals with professional photo editing. From retouching to manipulation, I bring your images to life. Let's collaborate to create stunning photos that captivate your audience.
-                </p>
-                <button>Contact me</button>
-            </div>
-        </div>
-    </section>
+<section id="service">
+	<div class="service-title">My Service</div>
+	<div class="service">
+		<div class="service-container">
+			<h2 class="service-H">Web <br>Designing</h2>
+			<p class="service-B">I provide professional
+				<br>web design service and fuctional<br> 
+				user interface for the user<br> with expertise of HTML, CSS and<br> JavaScript.
+				I'm committed to ensure<br>every project is not just looks<br> good it's also fuctioning well<br> across the device and browser.
+			</p>
+			<button>Contact me</button>
+		</div>
+		<div class="service-container">
+			<h2 class="service-H">Graphic<br>Designing</h2>
+			<p class="service-B">I provide creativity and passion<br>graphic design poster
+			 <br> 
+				service<br> with stunnig and masterpieces.<br>
+				with a strong and memorable visual. <br>every project is not just looks<br> good it's also fuctioning well<br> across the device and browser.
+			</p>
+			<button>Contact me</button>
+		</div>
+		<div class="service-container">
+			<h2 class="service-H">Photo<br>Editing</h2>
+			<p class="service-B">Expert photo editing Services <br>
+				Enhance your visuals with professional photo editing. From retouching to manipulation, I bring your images to life. Let's collaborate to create stunning photos that captivate your audience.
+			</p>
+			<button>Contact me</button>
+		</div>
+	</div>
+</section>
 
-    <section id="skills">
-        <div class="skill-title">My Skill</div>
-        <div class="skills">
+<section id="skills">
+		<div class="skill-title">My Skill</div>
+	<div class="skills">
 
-            <div class="skill-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/html.png">
-                <h1 class="skill-H">HTML</h1>
-                <button id="skill-btn">Expertise</button>
-                <div class="skill-load" id="skill-load">
-                    <p>100%</p>
-                    <div class="load"></div>
-                </div>
-            </div>
+		<div class="skill-container">
+			<img src="https://github.com/Freestyletechdesigner/html.png">
+			<h1 class="skill-H">HTML</h1>
+			<button id="skill-btn">Expertise</button>
+			<div class="skill-load" id="skill-load">
+				<p>100%</p>
+				<div class="load"></div>
+			</div>
+		</div>
 
-            <div class="skill-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/css.png">
-                <h1 class="skill-H">CSS</h1>
-                <button id="skill-btn2">Expertise</button>
-                <div class="skill-load" id="skill-load2">
-                    <p>100%</p>
-                    <div class="load"></div>
-                </div>
-            </div>
+		<div class="skill-container">
+			<img src="https://github.com/Freestyletechdesigner/css.png">
+			<h1 class="skill-H">CSS</h1>
+			<button id="skill-btn2">Expertise</button>
+			<div class="skill-load" id="skill-load2">
+				<p>100%</p>
+				<div class="load"></div>
+			</div>
+		</div>
 
-            <div class="skill-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/js.png">
-                <h1 class="skill-H">Java Script</h1>
-                <button id="skill-btn3">Expertise</button>
-                <div class="skill-load" id="skill-load3">
-                    <p>50%</p>
-                    <div class="load2"></div>
-                </div>
-            </div>
+		<div class="skill-container">
+			<img src="https://github.com/Freestyletechdesigner/js.png">
+			<h1 class="skill-H">Java Script</h1>
+			<button id="skill-btn3">Expertise</button>
+			<div class="skill-load" id="skill-load3">
+				<p>50%</p>
+				<div class="load2"></div>
+			</div>
+		</div>
 
-            <div class="skill-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/ps.png">
-                <h1 class="skill-H">Photoshop </h1>
-                <button id="skill-btn4">Expertise</button>
-                <div class="skill-load" id="skill-load4">
-                    <p>100%</p>
-                    <div class="load"></div>
-                </div>
-            </div>
+		<div class="skill-container">
+			<img src="https://github.com/Freestyletechdesigner/ps.png">
+			<h1 class="skill-H">Photoshop </h1>
+			<button id="skill-btn4">Expertise</button>
+			<div class="skill-load" id="skill-load4">
+				<p>100%</p>
+				<div class="load"></div>
+			</div>
+		</div>
 
-            <div class="skill-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/lr.png">
-                <h1 class="skill-H">Light Room</h1>
-                <button id="skill-btn5">Expertise</button>
-                <div class="skill-load" id="skill-load5">
-                    <p>100%</p>
-                    <div class="load"></div>
-                </div>
-            </div>
+		<div class="skill-container">
+			<img src="https://github.com/Freestyletechdesigner/lr.png">
+			<h1 class="skill-H">Light Room</h1>
+			<button id="skill-btn5">Expertise</button>
+			<div class="skill-load" id="skill-load5">
+				<p>100%</p>
+				<div class="load"></div>
+			</div>
+		</div>
 
-            <div class="skill-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/sf.png">
-                <h1 class="skill-H">Skin Finer</h1>
-                <button id="skill-btn6">Expertise</button>
-                <div class="skill-load" id="skill-load6">
-                    <p>100%</p>
-                    <div class="load"></div>
-                </div>
-            </div>
+		<div class="skill-container">
+			<img src="https://github.com/Freestyletechdesigner/sf.png">
+			<h1 class="skill-H">Skin Finer</h1>
+			<button id="skill-btn6">Expertise</button>
+			<div class="skill-load" id="skill-load6">
+				<p>100%</p>
+				<div class="load"></div>
+			</div>
+		</div>
 
-        </div>
+	</div>
 
-        <script type="text/javascript">
-            const skillButton = document.getElementById('skill-btn');
-            const skillLoad = document.getElementById('skill-load');
+	<script type="text/javascript">
 
-            skillButton.addEventListener('click', () => {
-                skillLoad.style.display = 'block';
-            })
+		const skillButton = document.getElementById('skill-btn');
+		const skillLoad = document.getElementById('skill-load');
 
-            const skillButton2 = document.getElementById('skill-btn2');
-            const skillLoad2 = document.getElementById('skill-load2');
+		skillButton.addEventListener('click', () =>{
+			skillLoad.style.display='block';
+		})
 
-            skillButton2.addEventListener('click', () => {
-                skillLoad2.style.display = 'block';
-            })
+		const skillButton2 = document.getElementById('skill-btn2');
+		const skillLoad2 = document.getElementById('skill-load2');
 
-            const skillButton3 = document.getElementById('skill-btn3');
-            const skillLoad3 = document.getElementById('skill-load3');
+		skillButton2.addEventListener('click', () =>{
+			skillLoad2.style.display='block';
+		})
 
-            skillButton3.addEventListener('click', () => {
-                skillLoad3.style.display = 'block';
-            })
+		const skillButton3 = document.getElementById('skill-btn3');
+		const skillLoad3 = document.getElementById('skill-load3');
 
-            const skillButton4 = document.getElementById('skill-btn4');
-            const skillLoad4 = document.getElementById('skill-load4');
+		skillButton3.addEventListener('click', () =>{
+			skillLoad3.style.display='block';
+		})
 
-            skillButton4.addEventListener('click', () => {
-                skillLoad4.style.display = 'block';
-            })
+		const skillButton4 = document.getElementById('skill-btn4');
+		const skillLoad4 = document.getElementById('skill-load4');
 
-            const skillButton5 = document.getElementById('skill-btn5');
-            const skillLoad5 = document.getElementById('skill-load5');
+		skillButton4.addEventListener('click', () =>{
+			skillLoad4.style.display='block';
+		})
 
-            skillButton5.addEventListener('click', () => {
-                skillLoad5.style.display = 'block';
-            })
+		const skillButton5 = document.getElementById('skill-btn5');
+		const skillLoad5 = document.getElementById('skill-load5');
 
-            const skillButton6 = document.getElementById('skill-btn6');
-            const skillLoad6 = document.getElementById('skill-load6');
+		skillButton5.addEventListener('click', () =>{
+			skillLoad5.style.display='block';
+		})
 
-            skillButton6.addEventListener('click', () => {
-                skillLoad6.style.display = 'block';
-            })
-        </script>
+		const skillButton6 = document.getElementById('skill-btn6');
+		const skillLoad6 = document.getElementById('skill-load6');
 
-    </section>
+		skillButton6.addEventListener('click', () =>{
+			skillLoad6.style.display='block';
+		})
 
-    <section id="project">
-        <div class="project-title">My Project</div>
-        <div class="project">
 
-            <div class="project-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/real estate home.jpg">
-                <p>My real estate website.<br>With the help of my real estate <br> it make easy to buy,sale and rent houses.</p>
-                <a href="real estate.html"><button>view project</button></a>
-            </div>
+	</script>
 
-            <div class="project-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/boom.jpg">
-                <p>Designed and developed a user-friendly<br> online store with checkout,
-                    <br> leveraging [technologies] to enhance customer experience and drive sales.</p>
-                <a href="Boombest.html"><button>view project</button></a>
-            </div>
+</section>
 
-            <div class="project-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/eg.jpg">
-                <p>Selected photo editing and graphic design projects showcasing my creative vision and technical skills. From retouching to illustration.</p>
-                <a href="graphic and editing.html"><button>view project</button></a>
-            </div>
+<section id="project">
+		<div class="project-title">My Project</div>
+	<div class="project">
 
-        </div>
-    </section>
+		<div class="project-container">
+			<img src="https://github.com/Freestyletechdesigner/real estate home.jpg">
+			<p>My real estate website.<br>With the help of my real estate <br>
+			it make easy to buy,sale and rent houses.</p>
+			<a href="real estate.html"><button>view project</button></a>
+		</div>
 
-    <section id="tool">
+		<div class="project-container">
+			<img src="https://github.com/Freestyletechdesigner/boom.jpg">
+			<p>Designed and developed a user-friendly<br> online store with checkout,
+				<br> leveraging [technologies] to enhance customer experience and drive sales.</p>
+			<a href="Boombest.html"><button>view project</button></a>		
+		</div>
 
-        <div class="tool-title">My Tools</div>
-        <div class="tool">
+		<div class="project-container">
+			<img src="https://github.com/Freestyletechdesigner/eg.jpg">
+			<p>Selected photo editing and graphic design projects showcasing my creative vision and technical skills. From retouching to illustration.</p>
+			<a href="graphic and editing.html"><button>view project</button></a>
+		</div>
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/vs code.png">
-                <h1 class="tool-H">Visual Sudio</h1>
-            </div>
+	</div>
+</section>
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/html.png">
-                <h1 class="tool-H">HTML</h1>
-            </div>
+<section id="tool">
+	
+			<div class="tool-title">My Tools</div>
+	<div class="tool">
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/css.png">
-                <h1 class="tool-H">CSS</h1>
-            </div>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/vs code.png">
+			<h1 class="tool-H">Visual Sudio</h1>
+		</div>
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/js.png">
-                <h1 class="tool-H">Java Script</h1>
-            </div>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/html.png">
+			<h1 class="tool-H">HTML</h1>
+		</div>
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/ps.png">
-                <h1 class="tool-H">Photoshop</h1>
-            </div>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/css.png">
+			<h1 class="tool-H">CSS</h1>
+		</div>
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/lr.png">
-                <h1 class="tool-H">Light Room</h1>
-            </div>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/js.png">
+			<h1 class="tool-H">Java Script</h1>
+		</div>
 
-            <div class="tool-container">
-                <img src="https://github.com/Freestyletechdesigner/Freestyle/sf.png">
-                <h1 class="tool-H">Skin Finer</h1>
-            </div>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/ps.png">
+			<h1 class="tool-H">Photoshop</h1>
+		</div>
 
-        </div>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/lr.png">
+			<h1 class="tool-H">Light Room</h1>
+		</div>
 
-    </section>
+		<div class="tool-container">
+			<img src="https://github.com/Freestyletechdesigner/sf.png">
+			<h1 class="tool-H">Skin Finer</h1>
+		</div>
 
-    <section id="contact" class="contact-page">
+	</div>
 
-        <div class="social-contact">
-            <h1>Let's connect!</h1>
-            <p>Drop me a message at chiazagomfreedom@icloud.com/<br>+234 807 966 8756 or<br> follow me on freestyle.techsdesiner.</p>
-            <div class="social-info">
-                <a href="https://www.tiktok.com/freestyle.techdesigner"><img src="icon/tiktok icon.png"></a>
-                <a href="mailto:chiazagomfreedom@icloud.com?subject=Hello&body=Hi, I'd like to get in touch."><img src="icon/email icon2.png"></a>
-                <a href="https://www.facebook.com/Freedom Chiazagom"><img src="icon/facebook icon.png"></a>
-                <a href="https://whatsapp.com/+234 807 966 8756?text=How may i help u"><img src="icon/whatsapp icon.png"></a>
-            </div>
-        </div>
+</section>	
 
-        <div>
-            <form id="form" class="form-contact">
-                <input type="text" name="" id="name" required placeholder="Enter your name">
-                <input type="email" name="" id="email" required placeholder="Enter your emil">
-                <input type="number" name="" id="number" required placeholder="Enter your number">
-                <textarea id="text-area"></textarea>
-                <button type="submit" id="submit-btn">Submit</button>
-                <p class="result" id="result"></p>
-            </form>
-            <script type="text/javascript">
-                const submitButton = document.getElementById('submit-btn');
-                const result = document.getElementById('result');
+<section id="contact" class="contact-page">
 
-                submitButton.addEventListener('click', (e) => {
-                    e.preventDefault();
+	<div class="social-contact">
+		<h1>Let's connect!</h1>
+		<p>Drop me a message at chiazagomfreedom@icloud.com/<br>+234 807 966 8756 or<br> follow me on freestyle.techsdesiner.</p>
+		<div class="social-info">
+        <a href="https://www.tiktok.com/freestyle.techdesigner"><img src="icon/tiktok icon.png"></a>
+        <a href="mailto:chiazagomfreedom@icloud.com?subject=Hello&body=Hi, I'd like to get in touch."><img src="icon/email icon2.png"></a>
+        <a href="https://www.facebook.com/Freedom Chiazagom"><img src="icon/facebook icon.png"></a>
+        <a href="https://whatsapp.com/+234 807 966 8756?text=How may i help u"><img src="icon/whatsapp icon.png"></a>
+		</div>
+	</div>
 
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const number = document.getElementById('number').value.trim();
-                    const textArea = document.getElementById('text-area').value.trim();
+	<div>
+		<form id="form" class="form-contact">
+			<input type="text" name="" id="name" required 
+			placeholder="Enter your name">
+			<input type="email" name="" id="email" required 
+			placeholder="Enter your emil">
+			<input type="number" name="" id="number" required 
+			placeholder="Enter your number">
+			<textarea id="text-area"></textarea>
+			<button type="submit" id="submit-btn">Submit</button>
+			<p class="result" id="result"></p>
+		</form>
+		<script type="text/javascript">
+			const submitButton = document.getElementById('submit-btn');
+			const result = document.getElementById('result');
 
-                    if (name && email && number && textArea) {
-                        result.innerHTML = 'we will get back to you';
-                    } else {
-                        alert('fill out the field');
-                    }
-                });
-            </script>
-        </div>
+			submitButton.addEventListener('click', (e) =>{
+				e.preventDefault();
 
-    </section>
+				const name = document.getElementById('name').value.trim();
+				const email = document.getElementById('email').value.trim();
+				const number = document.getElementById('number').value.trim();
+				const textArea = document.getElementById('text-area').value.trim();
 
-    <footer>
-        <p>&copy; welcome to my 2025 portfolio | All Rights Reserved. @Freestyle Tech</p>
-    </footer>
+				if (name && email && number && textArea) {
+					result.innerHTML = 'we will get back to you';
+				} else {
+					alert('fill out the field');
+				}
+			});
+		</script>
+	</div>
+
+</section>
+
+<footer> 
+    <p>&copy; welcome to my 2025 portfolio | All Rights Reserved. @Freestyle Tech</p>
+</footer>
 
 </body>
-
-
 </html>
-
-
-
